@@ -1,13 +1,13 @@
-package jonss.com.github.graphqlcrudsample;
+package com.schimidt.graphql;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class GraphqlCrudSampleApplication {
+public class Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(GraphqlCrudSampleApplication.class, args);
+		SpringApplication.run(Application.class, args);
 	}
 
 }

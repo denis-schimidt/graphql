@@ -1,19 +1,19 @@
 version: '3'
 
 services:
-  api:
-    build:
-      context: .
-    container_name: graphql-sample
-    ports:
-      - 8080:8080
-    depends_on:
-      - db
-    environment:
-      JAVA_ENV: dev
-      DATABASE_URL: jdbc:mysql://db:3306/graphql_sample_db
-      DATABASE_USER: root
-      DATABASE_PASSWORD: root
+#  api:
+#    build:
+#      context: .
+#    container_name: graphql-sample
+#    ports:
+#      - 8080:8080
+#    depends_on:
+#      - db
+#    environment:
+#      JAVA_ENV: dev
+#      DATABASE_URL: jdbc:mysql://db:3306/graphql_sample_db
+#      DATABASE_USER: root
+#      DATABASE_PASSWORD: root
 
   db:
     image: mysql:latest

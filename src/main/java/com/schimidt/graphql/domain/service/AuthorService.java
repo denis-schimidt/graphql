@@ -1,7 +1,7 @@
-package jonss.com.github.graphqlcrudsample.domain.services;
+package com.schimidt.graphql.domain.service;
 
-import jonss.com.github.graphqlcrudsample.domain.repositories.AuthorRepository;
-import jonss.com.github.graphqlcrudsample.domain.models.Author;
+import com.schimidt.graphql.domain.model.Author;
+import com.schimidt.graphql.domain.repository.AuthorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

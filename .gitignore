@@ -4,6 +4,8 @@ build/
 gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**
 !**/src/test/**
+gradlew
+gradlew.bat
 
 ### STS ###
 .apt_generated
@@ -22,7 +24,6 @@ gradle/wrapper/gradle-wrapper.jar
 out/
 gradle/
 
-
 ### NetBeans ###
 /nbproject/private/
 /nbbuild/
@@ -32,3 +33,4 @@ gradle/
 
 ### VS Code ###
 .vscode/
+

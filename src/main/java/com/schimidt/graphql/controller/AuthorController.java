@@ -1,16 +1,16 @@
-package jonss.com.github.graphqlcrudsample.web.graphql;
+package com.schimidt.graphql.controller;
 
 import com.coxautodev.graphql.tools.GraphQLMutationResolver;
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
-import jonss.com.github.graphqlcrudsample.domain.models.Author;
-import jonss.com.github.graphqlcrudsample.domain.services.AuthorService;
+import com.schimidt.graphql.domain.model.Author;
+import com.schimidt.graphql.domain.service.AuthorService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
 
 import java.util.Optional;
 
-@Component
-public class AuthorGraphQL implements GraphQLMutationResolver, GraphQLQueryResolver {
+@Controller
+public class AuthorController implements GraphQLMutationResolver, GraphQLQueryResolver {
 
     @Autowired
     private AuthorService authorService;
@@ -22,5 +22,4 @@ public class AuthorGraphQL implements GraphQLMutationResolver, GraphQLQueryResol
     public Author createAuthor(Author author) {
         return authorService.create(author);
     }
-
 }

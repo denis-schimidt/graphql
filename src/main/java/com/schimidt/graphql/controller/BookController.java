@@ -1,16 +1,16 @@
-package jonss.com.github.graphqlcrudsample.web.graphql;
+package com.schimidt.graphql.controller;
 
 import com.coxautodev.graphql.tools.GraphQLMutationResolver;
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
-import jonss.com.github.graphqlcrudsample.domain.models.Book;
-import jonss.com.github.graphqlcrudsample.domain.services.BookService;
+import com.schimidt.graphql.domain.model.Book;
+import com.schimidt.graphql.domain.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
 
 import java.util.Optional;
 
-@Component
-public class BookGraphQL implements GraphQLMutationResolver, GraphQLQueryResolver {
+@Controller
+public class BookController implements GraphQLMutationResolver, GraphQLQueryResolver {
 
     @Autowired
     private BookService bookService;
@@ -22,7 +22,6 @@ public class BookGraphQL implements GraphQLMutationResolver, GraphQLQueryResolve
     public Book createBook(Book book, String email) {
         return bookService.create(book, email);
     }
-
 }
 
 

@@ -1,6 +1,6 @@
-package jonss.com.github.graphqlcrudsample.domain.repositories;
+package com.schimidt.graphql.domain.repository;
 
-import jonss.com.github.graphqlcrudsample.domain.models.Author;
+import com.schimidt.graphql.domain.model.Author;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

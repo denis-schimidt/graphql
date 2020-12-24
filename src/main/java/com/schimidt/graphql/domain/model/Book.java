@@ -1,4 +1,4 @@
-package jonss.com.github.graphqlcrudsample.domain.models;
+package com.schimidt.graphql.domain.model;
 
 import org.hibernate.annotations.Where;
 
