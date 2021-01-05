@@ -5,6 +5,7 @@ import com.coxautodev.graphql.tools.GraphQLQueryResolver;
 import com.schimidt.graphql.domain.model.Book;
 import com.schimidt.graphql.domain.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 
 import java.util.Optional;
@@ -21,6 +22,10 @@ public class BookController implements GraphQLMutationResolver, GraphQLQueryReso
 
     public Book createBook(Book book, String email) {
         return bookService.create(book, email);
+    }
+
+    public Page<Book> listAllBooks(GraphQLPageRequest pageRequest) {
+        return bookService.listAll(pageRequest);
     }
 }
 

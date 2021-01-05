@@ -1,7 +1,6 @@
 package com.schimidt.graphql.domain.model;
 
 import javax.persistence.*;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -15,9 +14,12 @@ public class Author {
     @Id
     @GeneratedValue(strategy = IDENTITY)
     private Long id;
+
     private String fullname;
+
     private String email;
-    @OneToMany(mappedBy = "author", fetch = FetchType.EAGER)
+
+    @OneToMany(mappedBy = "author")
     private List<Book> books = new ArrayList();
 
     public String getEmail() {

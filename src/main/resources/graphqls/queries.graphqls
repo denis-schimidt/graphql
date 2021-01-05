@@ -1,9 +1,16 @@
+input GraphqlPageRequest {
+    page: Int,
+    size: Int
+}
+
 type Query {
     findAuthor(email: String): Author
     findBook(isbn: String): Book
+    listAllBooks(pageRequest:GraphqlPageRequest): [Book!]!
 }
 
 type Mutation {
     createBook(book: BookInput!, email: String!): Book
     createAuthor(author: AuthorInput): Author
 }
+
