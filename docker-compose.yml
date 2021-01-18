@@ -1,5 +1,12 @@
 version: '3'
 
+networks:
+  graphql-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.19.0.0/16
+
 services:
 #  api:
 #    build:
@@ -24,3 +31,6 @@ services:
       - MYSQL_DATABASE=graphql_sample_db
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_PASSWORD=root
+    networks:
+      graphql-network:
+        ipv4_address: 172.19.0.5

@@ -2,6 +2,7 @@ package com.schimidt.graphql.domain.model;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 import java.util.UUID;
 
 import static javax.persistence.GenerationType.IDENTITY;
@@ -22,6 +23,9 @@ public class Book {
 
     @ManyToOne
     private Author author;
+
+    @OneToMany(mappedBy = "book")
+    private List<Review> reviews;
 
     private LocalDate createdAt = LocalDate.now();
 
@@ -82,5 +86,13 @@ public class Book {
 
     public void setActive(boolean active) {
         this.active = active;
+    }
+
+    public List<Review> getReviews() {
+        return reviews;
+    }
+
+    public void setReviews(List<Review> reviews) {
+        this.reviews = reviews;
     }
 }
