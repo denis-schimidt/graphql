@@ -9,8 +9,8 @@
 ```graphql
 mutation {
   createAuthor(author:{
-   	fullname: "Douglas Adams",
-		email: "douglas.adams@hitchhiker.co.uk"
+   	fullname: "Dênis Schimidt",
+		email: "denis.oliveira@elo7.com"
   }) {
     fullname,
   	email
@@ -24,7 +24,7 @@ mutation {
 
 ```graphql
 query {
-  findAuthor(email: "douglas.adams@hitchhiker.co.uk") {
+  findAuthor(email: "denis.oliveira@elo7.com") {
     email
     fullname
     books {
@@ -40,19 +40,19 @@ query {
 {
   "data": {
     "findAuthor": {
-      "email": "douglas.adams@hitchhiker.co.uk",
-      "fullname": "Douglas Adams",
+      "email": "denis.oliveira@elo7.com",
+      "fullname": "Dênis Schimidt",
       "books": [
         {
-          "title": "The hitchhiker's guide to the galaxy",
+          "title": "Hard Die",
           "isbn": "09346259-348e-4a12-b908-d833d92d07f0"
         },
         {
-          "title": "The Restaurant at the End of the Universe",
+          "title": "Harry Porter",
           "isbn": "4e10a8f9-014f-452a-8d2a-f82f56fd2b9e"
         },
         {
-          "title": "So Long, and Thanks for All the Fish",
+          "title": "Indiana Jones",
           "isbn": "5ac92f3b-5a9a-42eb-8f97-f3012708f389"
         }
       ]
@@ -65,9 +65,9 @@ query {
 
 ```graphql
 mutation {
-  createBook(email:"douglas.adams@hitchhiker.co.uk", book: {
-    title: "Mostly Harmless",
-    subject: "fiction"
+  createBook(email:"denis.oliveira@elo7.com", book: {
+    title: "Hard Die",
+    subject: "action"
   }) {
     title
     subject
@@ -88,4 +88,10 @@ query {
   }
 }
 
+```
+
+CURL
+-----------------
+```bash
+curl -i -H 'Content-Type: application/json' -X POST -d '{"query":"query {listAllBooks(pageRequest:{page:0, size:40}){title subject reviews{stars} author{email} } }" }' http://localhost:8080/graphql
 ```
