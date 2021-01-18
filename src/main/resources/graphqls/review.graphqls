@@ -1,0 +1,11 @@
+type Review {
+    commentary: String!
+    id: ID
+    stars: Int!
+}
+
+input ReviewInput {
+    commentary: String!
+    stars: Int!
+    bookId: ID!
+}

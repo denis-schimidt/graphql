@@ -12,5 +12,6 @@ type Query {
 type Mutation {
     createBook(book: BookInput!, email: String!): Book
     createAuthor(author: AuthorInput): Author
+    createReview(review: ReviewInput!): Review
 }
 

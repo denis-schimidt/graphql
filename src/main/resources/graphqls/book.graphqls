@@ -3,6 +3,7 @@ type Book {
     title: String!
     subject: String!
     author: Author!
+    reviews: [Review]
 }
 
 input BookInput {
